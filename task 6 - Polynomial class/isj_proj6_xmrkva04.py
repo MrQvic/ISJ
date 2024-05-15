@@ -2,8 +2,20 @@
 
 #author: Adam Mrkva - xmrkva04
 
-class Polynomial:
+import test
 
+class Polynomial:
+    """
+    Represents a polynomial with coefficients.
+
+    Coefficients can be provided as positional arguments or as keyword arguments.
+    If positional arguments are provided, they will be treated as a list of coefficients.
+    If keyword arguments are provided, they will be treated as coefficients in the format 'x{i}'.
+
+    Example usage:
+    poly = Polynomial(1, 2, 3)              # Creates a polynomial with coefficients [1, 2, 3]
+    poly = Polynomial(x0=1, x1=2, x2=3)     # Creates a polynomial with coefficients [1, 2, 3]
+    """
     def __init__(self, *coefficients, **kwargs) -> None:
         self.coefficients = []
         if coefficients:
@@ -89,17 +101,32 @@ class Polynomial:
             return result
         
     def derivative(self) -> "Polynomial":
+        """
+        Returns:
+            Polynomial: The derivative of the polynomial.
+        """
         if len(self.coefficients) <= 1:
             return Polynomial(0)
         else:
             result = [0] * (len(self.coefficients))
             for i, coeff in enumerate(self.coefficients):
-                if i == 0:  #skip first index - always 0
+                if i == 0:  # skip first index - always 0
                     continue
-                result[i - 1] = i * coeff   #adjust position of coeffs by -1
+                result[i - 1] = i * coeff   # adjust position of coeffs by -1
             return Polynomial(result)
         
     def at_value(self, x1, x2 = None) -> "Polynomial":
+        """
+        Evaluates the polynomial at the given value(s) and returns the result.
+
+        Parameters:
+        - x1: The first value at which to evaluate the polynomial.
+        - x2: (optional) The second value at which to evaluate the polynomial. If not provided, only x1 will be used.
+
+        Returns:
+        - If x2 is not provided, returns the result of evaluating the polynomial at x1.
+        - If x2 is provided, returns the difference between the results of evaluating the polynomial at x2 and x1.
+        """
         def eval(x):
             result = 0
             for i, coeff in enumerate(self.coefficients):
@@ -110,3 +137,6 @@ class Polynomial:
             return eval(x1)
         else:
             return eval(x2) - eval(x1)
+        
+if __name__ == '__main__':
+    test.test()
