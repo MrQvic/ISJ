@@ -47,5 +47,3 @@ if __name__ == "__main__":
     print(uniq_srt('abrakadabra'))
     print(uniq_orig_order('abrakadabra'))
 ```
-
-This will output the results of the functions when called with the provided example inputs.

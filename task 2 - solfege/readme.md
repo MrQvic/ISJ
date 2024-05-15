@@ -20,8 +20,9 @@ print(she_says_he_says('ma rymu'))  # Outputs: 'umiram'
 
 This function takes a string as input, which should contain a title (optional) and a hymn separated by ': '. It then partitions the hymn into a sublist starting from the first string, skipping every two other strings, and ending 3 strings from the end. The function returns the result as a string with ', ' as a separator.
 
-The function signature is as follows:
+Example usage:
 
 ```python
-def solfege(title_hymn: str) -> str:
+result = solfege("Amazing Grace: Amazing grace, how sweet the sound, That saved a wretch like me")
+print(result)  # Outputs: "Amazing, sweet, That"
 ```

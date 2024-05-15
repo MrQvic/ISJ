@@ -60,6 +60,8 @@ def solfege(title_hymn: str) -> str:
 
 
 if __name__ == "__main__":
+    result = solfege("Amazing Grace: Amazing grace, how sweet the sound, That saved a wretch like me")
+    print(result)
     #import doctest
     #doctest.testmod()
     pass
