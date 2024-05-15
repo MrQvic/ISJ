@@ -1,6 +1,6 @@
-# ISJ Project 1 - Conversion from camelCase to snake_case
+# ISJ task 1 - Conversion from camelCase to snake_case
 
-This project contains a function for converting strings from camelCase format to snake_case format.
+This file contains a function for converting strings from camelCase format to snake_case format.
 
 ## Function
 
